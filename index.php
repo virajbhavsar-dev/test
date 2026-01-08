@@ -1,23 +1,24 @@
 <?php
+declare(strict_types=1);
 
 class UserService
 {
     public function getName(int $id): string
     {
-        return "User_" . $id;
-    }
-		public function brokenDemo()
-    {
-        return $this->notExistingMethod();   // ❌ undefined method
-    }
-		
-    public function broken()
-    {
-        return $this->notExistingMethod();   // ❌ undefined method
+        return 'User_' . $id;
     }
 
-    public function brokenTwo()
+    /**
+     * Example method that intentionally throws instead of calling
+     * an undefined method.
+     */
+    public function demo(): void
     {
-        return $name + 1;   // ❌ undefined variable
+        throw new \LogicException('Not implemented yet.');
+    }
+
+    public function incrementNameLength(string $name): int
+    {
+        return strlen($name) + 1;
     }
 }

@@ -1,9 +1,13 @@
 <?php
-$age = 18;
+declare(strict_types=1);
 
-if ($age >= 18) {
-    echo "You are an adult";
-} else {
-    echo "You are a minor";
+function checkAge(int $age): string
+{
+    if ($age >= 18) {
+        return "You are an adult";
+    }
+
+    return "You are a minor";
 }
-?>
+
+echo checkAge(18);
