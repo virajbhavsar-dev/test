@@ -6,7 +6,11 @@ class UserService
     {
         return "User_" . $id;
     }
-
+		public function brokenDemo()
+    {
+        return $this->notExistingMethod();   // ❌ undefined method
+    }
+		
     public function broken()
     {
         return $this->notExistingMethod();   // ❌ undefined method
